@@ -33,3 +33,18 @@ Typescript vino a solucionar los siguientes problemas comunes en el desarrollo c
 - **Compilado o interpretado**: Typescript es un lenguaje compilado. El codigo fuente de Typescript se convierte a JavaScript antes de ser ejecutado en el navegador o en el servidor. El compilador de Typescript realiza varias verificaciones de tipo y transformaciones para garantizar que el codigo sea mas seguro y eficiente.
 
 - **Operadores**: Typescript comparte los mismos operadores que JavaScript, como los operadores aritmeticos, logicos, de comparacion y de asignacion. Sin embargo, al ser un superconjunto de JavaScript, Typescript añade funcionalidades adicionales como los operadores de tipos y los operadores de nullabilidad.
+
+## Otros conceptos importantes de TypeScript
+
+- **Interfaces**: Permiten definir contratos para las clases y objetos, asegurando que cumplan con ciertas formas o estructuras.
+- **Clases y herencia**: TypeScript soporta la creación de clases y la herencia, lo que facilita la implementación de la programación orientada a objetos.
+- **Genericos**: TypeScript permite crear funciones y clases reutilizables mediante genericos, lo que aumenta la flexibilidad del código.
+- **Modulos**: TypeScript soporta la modularización del código, permitiendo importar y exportar elementos entre archivos de manera eficiente.
+- **Decoradores**: Son una característica experimental que permite modificar clases, métodos y propiedades mediante anotaciones.
+- **Union Types**: Permiten a las variables aceptar más de un tipo de dato, proporcionando flexibilidad en el tipo de valores que pueden ser asignados a ellas.
+- **Type Inference**: TypeScript es capaz de inferir tipos de datos automáticamente cuando no se especifican explícitamente, mejorando la productividad del desarrollador.
+- **Tuples**: Permiten almacenar un conjunto de valores de diferentes tipos en una sola estructura, ofreciendo más flexibilidad que los arreglos tradicionales.
+- **Enums**: TypeScript permite el uso de enumeraciones para manejar conjuntos de constantes relacionadas de manera más legible y organizada.
+- **Nullability y Opcionales**: TypeScript proporciona un manejo explícito de valores `null` y `undefined` y permite marcar propiedades o parámetros como opcionales.
+- **Assertions de tipo**: Permite especificar explícitamente el tipo de una variable cuando TypeScript no puede inferirlo correctamente.
+- **Namespaces**: Permiten organizar el código dentro de un espacio de nombres para evitar conflictos y mejorar la estructura del proyecto.
