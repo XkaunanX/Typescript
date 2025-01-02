@@ -48,3 +48,74 @@ Typescript vino a solucionar los siguientes problemas comunes en el desarrollo c
 - **Nullability y Opcionales**: TypeScript proporciona un manejo explícito de valores `null` y `undefined` y permite marcar propiedades o parámetros como opcionales.
 - **Assertions de tipo**: Permite especificar explícitamente el tipo de una variable cuando TypeScript no puede inferirlo correctamente.
 - **Namespaces**: Permiten organizar el código dentro de un espacio de nombres para evitar conflictos y mejorar la estructura del proyecto.
+
+Ejemplo: 
+
+```typescript
+// Definicion de un tipo para los items del carrito
+interface Item {
+    id: number;
+    nombre: string;
+    precio: number;
+    cantidad: number;
+}
+
+// Clase para manejar el carrito de compras
+class Carrito {
+    private items: Item[] = [];
+
+    // Agregar un item al carrito
+    agregarItem(item: Item): void {
+        const existente = this.items.find(i => i.id === item.id);
+        if (existente) {
+            existente.cantidad += item.cantidad;
+        } else {
+            this.items.push(item);
+        }
+    }
+
+    // Eliminar un item por su ID
+    eliminarItem(id: number): void {
+        this.items = this.items.filter(item => item.id !== id);
+    }
+
+    // Calcular el precio total del carrito
+    calcularTotal(): number {
+        return this.items.reduce((total, item) => total + item.precio * item.cantidad, 0);
+    }
+
+    // Mostrar el contenido del carrito
+    mostrarItems(): void {
+        console.log("Contenido del carrito:");
+        this.items.forEach(item => {
+            console.log(`${item.cantidad}x ${item.nombre} - $${item.precio.toFixed(2)} cada uno`);
+        });
+    }
+}
+
+// Funcion principal para probar el carrito
+function main(): void {
+    const carrito = new Carrito();
+
+    // Agregar items
+    carrito.agregarItem({ id: 1, nombre: "Manzana", precio: 1.2, cantidad: 3 });
+    carrito.agregarItem({ id: 2, nombre: "Pan", precio: 2.5, cantidad: 2 });
+    carrito.agregarItem({ id: 1, nombre: "Manzana", precio: 1.2, cantidad: 2 }); // Agregar mas manzanas
+
+    // Mostrar items
+    carrito.mostrarItems();
+
+    // Mostrar el total
+    console.log(`Total: $${carrito.calcularTotal().toFixed(2)}`);
+
+    // Eliminar un item
+    carrito.eliminarItem(1);
+
+    // Mostrar items y total nuevamente
+    carrito.mostrarItems();
+    console.log(`Total: $${carrito.calcularTotal().toFixed(2)}`);
+}
+
+// Ejecutar la funcion principal
+main();
+```
